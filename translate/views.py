@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from .models import Word
 
 def home(request):
-    data = {'window':'fenetre', 'door':'porte'}
+    data = Word.objects.all()
     return render(request, 'translate/home.html', {'data': data})
